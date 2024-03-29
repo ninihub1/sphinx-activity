@@ -21,7 +21,7 @@ def print_board():
             print("-----")
 
 
-def is_win(player):
+def is_win(player, board):
     """
     Check if the current player won the game.
     :param player: ('X' or 'O') to check for win.
