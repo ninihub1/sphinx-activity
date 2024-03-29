@@ -1,4 +1,4 @@
-def any(a, axis=None, out=None, keepdims=np._NoValue, *, where=np._NoValue):
+def any(a, axis=None, out=None):
     """
     Test whether any array element along a given axis evaluates to True.
 
@@ -91,3 +91,6 @@ def any(a, axis=None, out=None, keepdims=np._NoValue, *, where=np._NoValue):
     pass
     # return _wrapreduction(a, np.logical_or, 'any', axis, None, out,
     #                       keepdims=keepdims, where=where)
+"""
+
+"""
