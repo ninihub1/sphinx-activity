@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>documentation &mdash; TicTacToeBug 29/03/2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=cdff492a"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TicTacToeBug
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">activity_follow_up</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TicTacToeBug</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">documentation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for documentation</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="any">
+<a class="viewcode-back" href="../documentation.html#documentation.any">[docs]</a>
+<span></span><span class="k">def</span> <span class="nf">any</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test whether any array element along a given axis evaluates to True.</span>
+
+<span class="sd">    Returns single boolean if `axis` is ``None``</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : array_like</span>
+<span class="sd">        Input array or object that can be converted to an array.</span>
+<span class="sd">    axis : None or int or tuple of ints, optional</span>
+<span class="sd">        Axis or axes along which a logical OR reduction is performed.</span>
+<span class="sd">        The default (``axis=None``) is to perform a logical OR over all</span>
+<span class="sd">        the dimensions of the input array. `axis` may be negative, in</span>
+<span class="sd">        which case it counts from the last to the first axis.</span>
+
+<span class="sd">        .. versionadded:: 1.7.0</span>
+
+<span class="sd">        If this is a tuple of ints, a reduction is performed on multiple</span>
+<span class="sd">        axes, instead of a single axis or all the axes as before.</span>
+<span class="sd">    out : ndarray, optional</span>
+<span class="sd">        Alternate output array in which to place the result.  It must have</span>
+<span class="sd">        the same shape as the expected output and its type is preserved</span>
+<span class="sd">        (e.g., if it is of type float, then it will remain so, returning</span>
+<span class="sd">        1.0 for True and 0.0 for False, regardless of the type of `a`).</span>
+<span class="sd">        See :ref:`ufuncs-output-type` for more details.</span>
+
+<span class="sd">    keepdims : bool, optional</span>
+<span class="sd">        If this is set to True, the axes which are reduced are left</span>
+<span class="sd">        in the result as dimensions with size one. With this option,</span>
+<span class="sd">        the result will broadcast correctly against the input array.</span>
+
+<span class="sd">        If the default value is passed, then `keepdims` will not be</span>
+<span class="sd">        passed through to the `any` method of sub-classes of</span>
+<span class="sd">        `ndarray`, however any non-default value will be.  If the</span>
+<span class="sd">        sub-class&#39; method does not implement `keepdims` any</span>
+<span class="sd">        exceptions will be raised.</span>
+
+<span class="sd">    where : array_like of bool, optional</span>
+<span class="sd">        Elements to include in checking for any `True` values.</span>
+<span class="sd">        See `~numpy.ufunc.reduce` for details.</span>
+
+<span class="sd">        .. versionadded:: 1.20.0</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    any : bool or ndarray</span>
+<span class="sd">        A new boolean or `ndarray` is returned unless `out` is specified,</span>
+<span class="sd">        in which case a reference to `out` is returned.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    ndarray.any : equivalent method</span>
+
+<span class="sd">    all : Test whether all elements along a given axis evaluate to True.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Not a Number (NaN), positive infinity and negative infinity evaluate</span>
+<span class="sd">    to `True` because these are not equal to zero.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.any([[True, False], [True, True]])</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; np.any([[True, False], [False, False]], axis=0)</span>
+<span class="sd">    array([ True, False])</span>
+
+<span class="sd">    &gt;&gt;&gt; np.any([-1, 0, 5])</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; np.any(np.nan)</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; np.any([[True, False], [False, False]], where=[[False], [True]])</span>
+<span class="sd">    False</span>
+
+<span class="sd">    &gt;&gt;&gt; o=np.array(False)</span>
+<span class="sd">    &gt;&gt;&gt; z=np.any([-1, 4, 5], out=o)</span>
+<span class="sd">    &gt;&gt;&gt; z, o</span>
+<span class="sd">    (array(True), array(True))</span>
+<span class="sd">    &gt;&gt;&gt; # Check now that z is a reference to o</span>
+<span class="sd">    &gt;&gt;&gt; z is o</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; id(z), id(o) # identity of z and o              # doctest: +SKIP</span>
+<span class="sd">    (191614240, 191614240)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">pass</span></div>
+
+    <span class="c1"># return _wrapreduction(a, np.logical_or, &#39;any&#39;, axis, None, out,</span>
+    <span class="c1">#                       keepdims=keepdims, where=where)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Blony Maunela.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
